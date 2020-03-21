@@ -1,6 +1,6 @@
 {
     "name": "react-iorouter",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "typings": "dist.es6",
     "main": "dist",
@@ -16,6 +16,7 @@
     "keywords": ["react", "router", "typescript"],
     "author": "cevek",
     "license": "ISC",
+    "sideEffects": false,
     "dependencies": {
         "@types/react": "^16.9.25",
         "path-to-regexp": "^6.1.0"
