@@ -1,0 +1,26 @@
+{
+    "name": "react-iorouter",
+    "version": "1.0.0",
+    "description": "",
+    "typings": "dist.es6",
+    "main": "dist",
+    "module": "dist.es6",
+    "scripts": {
+        "prepublish": "rm -rf dist && rm -rf dist.es6 && tsc --outDir dist.es6 && tsc --module commonjs --outDir dist"
+    },
+    "files": [
+        "dist",
+        "dist.es6",
+        "index.tsx"
+    ],
+    "keywords": ["react", "router", "typescript"],
+    "author": "cevek",
+    "license": "ISC",
+    "dependencies": {
+        "@types/react": "^16.9.25",
+        "path-to-regexp": "^6.1.0"
+    },
+    "devDependencies": {
+        "typescript": "^3.8.3"
+    }
+}
