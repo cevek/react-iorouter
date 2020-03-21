@@ -1,21 +1,14 @@
 import {Key, parse, regexpToFunction, tokensToFunction, tokensToRegexp} from 'path-to-regexp';
 import * as React from 'react';
 
-export const routes = {
-    profile: createRoute('/'),
-    attendanceManagers: createRoute('/attendance-managers'),
-    editAttendanceManagers: createRoute<{id: string; foo?: string}>('/attendance-managers/edit/:id'),
-    addAttendanceManagers: createRoute('/attendance-managers/add'),
-};
-
-type Route<Params extends object> = {
+export type Route<Params extends object> = {
     path: string;
     matchUrl: (url: Url) => Params | null;
     testUrl: (path: string) => boolean;
     toUrl: (params: Params) => string;
 };
 
-function createRoute<Params extends object>(path: string): Route<Params> {
+export function createRoute<Params extends object>(path: string): Route<Params> {
     const keys: Key[] = [];
     const tokens = parse(path);
     const re = tokensToRegexp(tokens, keys);
@@ -62,13 +55,13 @@ function createRoute<Params extends object>(path: string): Route<Params> {
     };
 }
 
-type Router = {
+export type Router = {
     url: Url;
     push: (url: string) => void;
     replace: (url: string) => void;
 };
 
-type Url = {
+export type Url = {
     path: string;
     query: string;
     state: object | undefined;
@@ -135,7 +128,7 @@ export const Router = React.memo(function Router(props: {
     return <routerContext.Provider value={router}>{children}</routerContext.Provider>;
 });
 
-const routerContext = React.createContext<Router>(null!);
+export const routerContext = React.createContext<Router>(null!);
 
 export function Route<Params extends object>(props: {
     route: Route<Params>;
