@@ -9,9 +9,9 @@ Simple small react router with typed routes and SSR support
 
 🚀 React hooks
 
-⚡️️ 2kb gzipped
+⚡️️ 2.8kb gzipped
 
-🦄 Node SSR Rendering
+🦄 Isomorphic (SSR support)
 
 💎 Scroll restoration
 
